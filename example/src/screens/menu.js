@@ -17,6 +17,9 @@ export default class MenuScreen extends Component {
         <TouchableOpacity style={styles.menu} onPress={this.onCalendarListPress.bind(this)}>
           <Text style={styles.menuText}>Calendar List</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.menu} onPress={this.onCalendarNextMonthPress.bind(this)}>
+          <Text style={styles.menuText}>Calendar Next Month</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.menu} onPress={this.onHorizontalCalendarListPress.bind(this)}>
           <Text style={styles.menuText}>Horizontal Calendar List</Text>
         </TouchableOpacity>
@@ -62,6 +65,11 @@ export default class MenuScreen extends Component {
     this.pushScreen('CalendarsList');
   }
 
+  onCalendarNextMonthPress() {
+    this.pushScreen('CalendarNextMonth');
+  }
+
+
   onHorizontalCalendarListPress() {
     this.pushScreen('HorizontalCalendarList');
   }
@@ -81,7 +89,7 @@ export default class MenuScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1,
     alignItems: 'center'
   },
   image: {

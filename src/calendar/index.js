@@ -15,7 +15,6 @@ import CalendarHeader from './header';
 import shouldComponentUpdate from './updater';
 import {SELECT_DATE_SLOT} from '../testIDs';
 
-
 //Fallback when RN version is < 0.44
 const viewPropTypes = ViewPropTypes || View.propTypes;
 const EmptyArray = [];
@@ -318,7 +317,14 @@ class Calendar extends Component {
   }
 
   render() {
-    const days = dateutils.page(this.state.currentMonth, this.props.firstDay);
+    const {minDateShown, maxDateShown} = this.props;
+    let days = dateutils.page(this.state.currentMonth, this.props.firstDay);
+    if (minDateShown) {
+      days = days.filter(day => day >= parseDate(minDateShown));
+    }
+    if (maxDateShown) {
+      days = days.filter(day => day <= parseDate(maxDateShown));
+    }
     const weeks = [];
     while (days.length) {
       weeks.push(this.renderWeek(days.splice(0, 7), weeks.length));
