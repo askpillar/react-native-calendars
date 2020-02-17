@@ -95,6 +95,8 @@ LocaleConfig.defaultLocale = 'fr';
   onMonthChange={(month) => {console.log('month changed', month)}}
   // Hide month navigation arrows. Default = false
   hideArrows={true}
+  // Hide month name. Default = false
+  hideMonthName={true}
   // Replace default arrows with custom ones (direction can be 'left' or 'right')
   renderArrow={(direction) => (<Arrow/>)}
   // Do not show days of other months in month page. Default = false
