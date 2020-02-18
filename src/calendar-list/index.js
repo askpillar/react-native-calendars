@@ -212,6 +212,7 @@ class CalendarList extends Component {
       <CalendarListItem
         minDateShown={this.props.minDateShown}
         maxDateShown={this.props.maxDateShown}
+        disableWeekends={this.props.disableWeekends}
         scrollToMonth={this.scrollToMonth.bind(this)}
         item={item}
         calendarHeight={this.props.calendarHeight}

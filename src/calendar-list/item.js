@@ -57,6 +57,7 @@ class CalendarListItem extends Component {
           current={row}
           minDateShown={this.props.minDateShown}
           maxDateShown={this.props.maxDateShown}
+          disableWeekends={this.props.disableWeekends}
           hideArrows={this.props.hideArrows}
           hideExtraDays={this.props.hideExtraDays}
           disableMonthChange

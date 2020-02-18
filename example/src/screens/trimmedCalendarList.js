@@ -1,23 +1,14 @@
 import React, {Component} from 'react';
-import {CalendarList} from 'react-native-calendars';
+import {TrimmedCalendarList} from 'react-native-calendars';
 
-export default class TrimmedCalendarList extends Component {
+export default class TrimmedCalendarListExample extends Component {
   render() {
+    const startDate = '2020-03-20';
+    const endDate = '2020-04-20';
     return (
-      <CalendarList
-        current={'2020-02-17'}
-        pastScrollRange={0}
-        futureScrollRange={1}
-        hideDayNames
-        monthFormat={'MMM'}
-        minDateShown={'2020-02-17'}
-        maxDateShown={'2020-03-16'}
-        theme={{
-          'stylesheet.calendar.header': {
-            header: { alignItems: 'flex-start', paddingVertical: 15},
-            monthText: { textTransform: 'uppercase' }
-          },
-        }}
+      <TrimmedCalendarList
+        startDate={startDate}
+        endDate={endDate}
       />
     );
   }

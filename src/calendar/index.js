@@ -181,7 +181,10 @@ class Calendar extends Component {
     const minDate = parseDate(this.props.minDate);
     const maxDate = parseDate(this.props.maxDate);
     let state = '';
+    let dayNumberOfWeek = day.getDay();
     if (this.props.disabledByDefault) {
+      state = 'disabled';
+    } else if (this.props.disableWeekends && [0, 6].includes(dayNumberOfWeek)) {
       state = 'disabled';
     } else if (
       (minDate && !dateutils.isGTE(day, minDate)) ||
@@ -192,6 +195,9 @@ class Calendar extends Component {
       state = 'disabled';
     } else if (dateutils.sameDate(day, XDate())) {
       state = 'today';
+    }
+    if (day > maxDate) {
+      return <View key={id} style={{flex: 1}} />;
     }
 
     if (
@@ -318,16 +324,22 @@ class Calendar extends Component {
 
   render() {
     const {minDateShown, maxDateShown} = this.props;
+    const parsedMinDateShown = parseDate(minDateShown);
+    const parsedMaxDateShown = parseDate(maxDateShown);
     let days = dateutils.page(this.state.currentMonth, this.props.firstDay);
-    if (minDateShown) {
-      days = days.filter(day => day >= parseDate(minDateShown));
-    }
-    if (maxDateShown) {
-      days = days.filter(day => day <= parseDate(maxDateShown));
-    }
+
     const weeks = [];
+
     while (days.length) {
-      weeks.push(this.renderWeek(days.splice(0, 7), weeks.length));
+      const weekIsWithinTrimmedSelection =
+        parsedMinDateShown <= days[0] && days[0] <= parsedMaxDateShown;
+      const shouldIncludeWeek =
+        !parsedMinDateShown || weekIsWithinTrimmedSelection;
+      if (shouldIncludeWeek) {
+        weeks.push(this.renderWeek(days.splice(0, 7), weeks.length));
+      } else {
+        days.splice(0, 7);
+      }
     }
 
     let indicator;
