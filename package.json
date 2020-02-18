@@ -1,6 +1,6 @@
 {
-  "name": "react-native-calendars",
-  "version": "1.22.0",
+  "name": "pillar-react-native-calendars",
+  "version": "0.0.0",
   "main": "src/index.js",
   "description": "React Native Calendar Components",
   "scripts": {
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wix/react-native-calendars"
+    "url": "git+https://github.com/askpillar/react-native-calendars.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "author": "Wix.com",
+  "author": "pillar.app",
   "license": "MIT",
   "dependencies": {
     "hoist-non-react-statics": "^3.3.1",
@@ -37,5 +37,12 @@
     "react-native-navigation": "^3.5.1",
     "semver": "5.x.x",
     "shell-utils": "1.x.x"
+  },
+  "bugs": {
+    "url": "https://github.com/askpillar/react-native-calendars/issues"
+  },
+  "homepage": "https://github.com/askpillar/react-native-calendars#readme",
+  "directories": {
+    "example": "example"
   }
 }
