@@ -6,7 +6,7 @@ import {Calendar} from 'react-native-calendars';
 export default class CalendarsScreen extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       selected: undefined
     };
@@ -19,6 +19,24 @@ export default class CalendarsScreen extends Component {
   render() {
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
+          <Text style={styles.text}>Calendar without month name</Text>
+          <Calendar
+              style={styles.calendar}
+              hideExtraDays
+              hideMonthName
+          />
+        <Text style={styles.text}>Week calendar</Text>
+        <Calendar
+          style={styles.calendar}
+          hideExtraDays
+          hideMonthName
+          minDate={'2020-02-16'}
+          minDateShown={'2020-02-16'}
+          maxDate={'2020-02-22'}
+          maxDateShown={'2020-02-22'}
+          disableWeekends
+          showDayNames
+        />
         <Text style={styles.text}>Calendar with selectable date</Text>
         <Calendar
           style={styles.calendar}
@@ -26,8 +44,8 @@ export default class CalendarsScreen extends Component {
           onDayPress={this.onDayPress}
           markedDates={{
             [this.state.selected]: {
-              selected: true, 
-              disableTouchEvent: true, 
+              selected: true,
+              disableTouchEvent: true,
               selectedDotColor: 'orange'
             }
           }}
@@ -57,7 +75,7 @@ export default class CalendarsScreen extends Component {
           hideArrows={true}
           // disabledByDefault={true}
         />
-        
+
         <Text style={styles.text}>Calendar with period marking and spinner</Text>
         <Calendar
           // style={styles.calendar}
@@ -106,14 +124,14 @@ export default class CalendarsScreen extends Component {
             '2012-05-08': {
               selected: true,
               dots: [
-                {key: 'vacation', color: 'blue', selectedDotColor: 'white'}, 
+                {key: 'vacation', color: 'blue', selectedDotColor: 'white'},
                 {key: 'massage', color: 'red', selectedDotColor: 'white'}
               ]
             },
             '2012-05-09': {
               disabled: true,
               dots: [
-                {key: 'vacation', color: 'green', selectedDotColor: 'red'}, 
+                {key: 'vacation', color: 'green', selectedDotColor: 'red'},
                 {key: 'massage', color: 'red', selectedDotColor: 'green'}
               ]
             }
@@ -148,7 +166,7 @@ export default class CalendarsScreen extends Component {
             }
           }}
         />
-        
+
         <Text style={styles.text}>Custom calendar with custom marking type</Text>
         <Calendar
           style={styles.calendar}
@@ -246,8 +264,8 @@ export default class CalendarsScreen extends Component {
           style={[
             styles.calendar,
             {
-              height: 250, 
-              borderBottomWidth: 1, 
+              height: 250,
+              borderBottomWidth: 1,
               borderBottomColor: 'lightgrey'
             }
           ]}

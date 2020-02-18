@@ -6,7 +6,7 @@ import styleConstructor from './style';
 
 class CalendarListItem extends Component {
   static displayName = 'IGNORE';
-  
+
   static defaultProps = {
     hideArrows: true,
     hideExtraDays: true
@@ -53,8 +53,11 @@ class CalendarListItem extends Component {
       return (
         <Calendar
           theme={this.props.theme}
-          style={[{height: this.props.calendarHeight, width: this.props.calendarWidth}, this.style.calendar, this.props.style]}
+          style={[{width: this.props.calendarWidth}, this.style.calendar, this.props.style]}
           current={row}
+          minDateShown={this.props.minDateShown}
+          maxDateShown={this.props.maxDateShown}
+          disableWeekends={this.props.disableWeekends}
           hideArrows={this.props.hideArrows}
           hideExtraDays={this.props.hideExtraDays}
           disableMonthChange
