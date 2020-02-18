@@ -25,6 +25,18 @@ export default class CalendarsScreen extends Component {
               hideExtraDays
               hideMonthName
           />
+        <Text style={styles.text}>Week calendar</Text>
+        <Calendar
+          style={styles.calendar}
+          hideExtraDays
+          hideMonthName
+          minDate={'2020-02-16'}
+          minDateShown={'2020-02-16'}
+          maxDate={'2020-02-22'}
+          maxDateShown={'2020-02-22'}
+          disableWeekends
+          showDayNames
+        />
         <Text style={styles.text}>Calendar with selectable date</Text>
         <Calendar
           style={styles.calendar}

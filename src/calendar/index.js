@@ -19,6 +19,8 @@ import {SELECT_DATE_SLOT} from '../testIDs';
 const viewPropTypes = ViewPropTypes || View.propTypes;
 const EmptyArray = [];
 
+const DAY_LETTERS = ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'];
+
 /**
  * @description: Calendar component
  * @example: https://github.com/wix/react-native-calendars/blob/master/example/src/screens/calendars.js
@@ -208,7 +210,7 @@ class Calendar extends Component {
     }
 
     const DayComp = this.getDayComponent();
-    const date = day.getDate();
+    const date = this.props.showDayNames ? DAY_LETTERS[day.getDay()] : day.getDate();
     const dateAsObject = xdateToData(day);
     const accessibilityLabel = `${
       state === 'today' ? 'today' : ''
