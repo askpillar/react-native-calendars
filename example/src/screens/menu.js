@@ -17,8 +17,8 @@ export default class MenuScreen extends Component {
         <TouchableOpacity style={styles.menu} onPress={this.onCalendarListPress.bind(this)}>
           <Text style={styles.menuText}>Calendar List</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.menu} onPress={this.onCalendarNextMonthPress.bind(this)}>
-          <Text style={styles.menuText}>Calendar Next Month</Text>
+        <TouchableOpacity style={styles.menu} onPress={this.onTrimmedCalendarListPress.bind(this)}>
+          <Text style={styles.menuText}>Trimmed Calendar List</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menu} onPress={this.onHorizontalCalendarListPress.bind(this)}>
           <Text style={styles.menuText}>Horizontal Calendar List</Text>
@@ -65,8 +65,8 @@ export default class MenuScreen extends Component {
     this.pushScreen('CalendarsList');
   }
 
-  onCalendarNextMonthPress() {
-    this.pushScreen('CalendarNextMonth');
+  onTrimmedCalendarListPress() {
+    this.pushScreen('TrimmedCalendarList');
   }
 
 

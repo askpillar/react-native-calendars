@@ -53,7 +53,7 @@ class CalendarListItem extends Component {
       return (
         <Calendar
           theme={this.props.theme}
-          style={[{height: this.props.calendarHeight, width: this.props.calendarWidth}, this.style.calendar, this.props.style]}
+          style={[{width: this.props.calendarWidth}, this.style.calendar, this.props.style]}
           current={row}
           minDateShown={this.props.minDateShown}
           maxDateShown={this.props.maxDateShown}

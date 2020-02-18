@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {CalendarList} from 'react-native-calendars';
 
-export default class CalendarNextMonth extends Component {
+export default class TrimmedCalendarList extends Component {
   render() {
     return (
       <CalendarList
-        calendarHeight={300}
         current={'2020-02-17'}
         pastScrollRange={0}
         futureScrollRange={1}
