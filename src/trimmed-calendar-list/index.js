@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {CalendarList} from 'react-native-calendars';
 import {parseDate} from '../interface';
+import CalendarList from '../calendar-list';
 
 export default class TrimmedCalendarList extends Component {
   render() {
@@ -24,9 +24,10 @@ export default class TrimmedCalendarList extends Component {
         maxDateShown={endDate}
         theme={{
           'stylesheet.calendar.header': {
-            header: { alignItems: 'flex-start', paddingVertical: 15},
-            monthText: { textTransform: 'uppercase' }
+            header: {alignItems: 'flex-start', paddingVertical: 15},
+            monthText: {textTransform: 'uppercase'},
           },
+          ...this.props.theme,
         }}
       />
     );
