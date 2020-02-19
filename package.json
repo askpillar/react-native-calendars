@@ -1,6 +1,6 @@
 {
   "name": "pillar-react-native-calendars",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "src/index.js",
   "description": "React Native Calendar Components",
   "scripts": {
