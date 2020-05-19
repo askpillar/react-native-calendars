@@ -1,5 +1,5 @@
 {
-  "name": "pillar-react-native-calendars",
+  "name": "react-native-calendars",
   "version": "0.0.1",
   "main": "src/index.js",
   "description": "React Native Calendar Components",
